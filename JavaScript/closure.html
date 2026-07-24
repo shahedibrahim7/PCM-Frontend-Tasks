@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Closure Button Clicks Example</title>
+</head>
+
+
+<body>
+  <button id="myBtn">Click Me!</button>
+  <p id="output"></p>
+
+  <script>
+    function setupButton() {
+      let clicks = 0;
+
+      document.getElementById("myBtn").addEventListener("click", function() {
+        clicks++;
+        document.getElementById("output").textContent =
+          "Button clicked " + clicks + " times";
+      });
+    }
+
+    setupButton();
+  </script>
+  
+</body>
+</html>
