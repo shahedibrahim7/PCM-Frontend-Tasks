@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM & Events</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #items div { padding: 8px; margin: 5px 0; background: #eee; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>DOM & Events</h1>
+
+  <input id="textInput" placeholder="Type something…" />
+  <button id="addBtn">Add item</button>
+
+  <h2>Items:</h2>
+  <div id="items"></div>
+
+  <script>
+    // 1. querySelector
+    const input = document.querySelector("#textInput");
+    const addBtn = document.querySelector("#addBtn");
+    const items = document.querySelector("#items");
+
+    // 2. addEventListener
+    addBtn.addEventListener("click", () => {
+      const value = input.value.trim();
+      if (!value) return;
+
+      // 3. createElement + append
+      const div = document.createElement("div");
+      div.textContent = value;
+
+      // click event on each item
+      div.addEventListener("click", (event) => {
+        alert("Item clicked: " + event.target.textContent);
+      });
+
+      items.append(div);
+      input.value = "";
+    });
+
+    // 4. Event bubbling example
+    items.addEventListener("click", () => {
+      console.log("BUBBLING: items container received a click!");
+    });
+  </script>
+
+</body>
+</html>
