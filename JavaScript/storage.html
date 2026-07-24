@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Todo + LocalStorage</title>
+</head>
+<body>
+
+  <h1>Todo List</h1>
+
+  <input id="todoInput" placeholder="Add a todo">
+  <button id="addBtn">Add</button>
+
+  <ul id="todoList"></ul>
+
+  <script>
+    const input = document.querySelector("#todoInput");
+    const addBtn = document.querySelector("#addBtn");
+    const list = document.querySelector("#todoList");
+
+    // Load todos when page opens
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    render();
+
+    addBtn.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (!text) return;
+
+      todos.push(text);
+      input.value = "";
+
+      save();
+      render();
+    });
+
+    function save() {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+
+    function render() {
+      list.innerHTML = "";
+      todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.textContent = todo;
+
+        li.addEventListener("click", () => {
+          todos.splice(index, 1);
+          save();
+          render();
+        });
+
+        list.append(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
