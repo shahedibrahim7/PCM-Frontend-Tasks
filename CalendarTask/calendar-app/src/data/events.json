@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Team Meeting",
+    "date": "2026-08-14",
+    "time": "10:00",
+    "description": "Weekly project meeting"
+  },
+  {
+    "id": 2,
+    "title": "Doctor Appointment",
+    "date": "2026-08-21",
+    "time": "15:00",
+    "description": "Routine checkup"
+  }
+]

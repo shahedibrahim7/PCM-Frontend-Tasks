@@ -1,0 +1,117 @@
+.calendar-container {
+  width: 900px;
+  max-width: 95%;
+  margin: 40px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.calendar-header button{
+  padding:8px 14px;
+  margin-left:8px;
+  cursor:pointer;
+}
+
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
+}
+
+.weekday{
+  background:#ececec;
+  padding:12px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.day-cell{
+  min-height:100px;
+  border:1px solid #ddd;
+  padding:10px;
+  background:white;
+}
+
+.day-cell.empty{
+  background:#f7f7f7;
+}
+
+.other-month {
+  color: #aaa;
+  background: #fafafa;
+}
+
+.today {
+  border: 2px solid #2563eb;
+  font-weight: bold;
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.event {
+  background: #2563eb;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.event-form{
+
+  position:fixed;
+
+  top:50%;
+
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  background:white;
+
+  padding:20px;
+
+  border-radius:10px;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+
+.event-form input,
+.event-form textarea{
+
+  display:block;
+
+  width:250px;
+
+  margin:10px 0;
+
+  padding:8px;
+
+}
+
+
+.event-form button{
+
+  margin-right:10px;
+
+  padding:8px 12px;
+
+}
