@@ -1,4 +1,4 @@
-# Calendar App
+# CALENDAR APP
 
 This is a simple calendar app made with React and JavaScript. It allows users to view the calendar and create, edit and delete events.
 
